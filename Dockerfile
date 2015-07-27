@@ -12,7 +12,7 @@ RUN mkdir -p /conf
 
 WORKDIR /opt
 
-ENV GRAYLOG_VERSION="1.0.0"
+ENV GRAYLOG_VERSION="1.1.5"
 ENV ES_VERSION="1.4.4"
 
 # Get mongo
