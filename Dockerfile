@@ -2,7 +2,7 @@ FROM java:openjdk-7-jre
 MAINTAINER Renaud RAKOTOMALALA <docker@score42.tagmail.eu>
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' > /etc/apt/sources.list.d/mongodb.list
+RUN echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
 RUN apt-get update -q
 RUN apt-get install wget -y
 
@@ -16,8 +16,6 @@ ENV GRAYLOG_VERSION="1.1.5"
 ENV ES_VERSION="1.4.4"
 
 # Get mongo
-RUN touch /etc/init.d/mongod
-RUN chmod 755 /etc/init.d/mongod
 RUN apt-get install mongodb-org-server -y
 RUN apt-get install pwgen -y
 
