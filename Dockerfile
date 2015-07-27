@@ -1,4 +1,4 @@
-FROM dockerfile/java:latest
+FROM java:openjdk-7-jre
 MAINTAINER Renaud RAKOTOMALALA <docker@score42.tagmail.eu>
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
