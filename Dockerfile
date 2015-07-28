@@ -16,6 +16,9 @@ ENV GRAYLOG_VERSION="1.1.5"
 ENV ES_VERSION="1.4.4"
 
 # Get mongo
+RUN apt-get install mongodb-org-server -y; exit 0
+RUN touch /etc/init.d/mongod
+RUN chmod a+x /etc/init.d/mongod
 RUN apt-get install mongodb-org-server -y
 RUN apt-get install pwgen -y
 
